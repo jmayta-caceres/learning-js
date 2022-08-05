@@ -1,4 +1,6 @@
 (() => {
+    "use strict";
+
     let deck = [];
     let tipos = ["C", "D", "H", "S"];
     let especiales = ["A", "J", "Q", "K"];
