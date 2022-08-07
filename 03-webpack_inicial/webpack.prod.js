@@ -3,11 +3,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
 
     output: {
         clean: true,
-        assetModuleFilename: '[name][ext]'
+        assetModuleFilename: '[name][ext]',
+        filename: 'main.[contenthash].js'
     },
 
     module: {
@@ -43,7 +44,10 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html',
         }),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].[fullhash].css',
+            ignoreOrder: true
+        }),
         new CopyPlugin({
             patterns: [
                 { from: "./src/assets", to: "assets/" },

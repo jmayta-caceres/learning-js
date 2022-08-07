@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js",
+    "build": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.config.js",
     "start": "webpack serve --config webpack.config.js --port=8080"
   },
   "author": "Jheison Mayta <jmayta.caceres@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
